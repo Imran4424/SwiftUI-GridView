@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    // fixed 3 column grid layout with following layout design
+    // adaptive minimum column column count based on screen size
     let layout = [
-        GridItem(.fixed(80)),
-        GridItem(.fixed(80)),
-        GridItem(.fixed(80))
+        GridItem(.adaptive(minimum: 80))
     ]
     
     var body: some View {
