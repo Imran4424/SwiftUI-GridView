@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    // fixed 3 column grid layout with following layout design
+    let layout = [
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80))
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ScrollView {
+            LazyVGrid(columns: layout) {
+                ForEach(0..<1000) {
+                    Text("Item \($0)")
+                }
+            }
         }
-        .padding()
     }
 }
 
